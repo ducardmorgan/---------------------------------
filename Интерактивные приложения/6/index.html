@@ -17,23 +17,24 @@
 		<img id="img1" src="3.gif" style="display: none">
 		<img id="img2" src="4.gif" style="display: none">
 	</div>
-
+	<img src="">
+	<img id="hide" src="">
 	<script type="text/javascript">
-		var a = 0;
+	    var l = 1;
 		function img() {
-			if (a==0) {
-				$("#img").attr("src", "1.gif");
-				a = 1;
-			} else {
-				$("#img").attr("src", "2.gif");
-				a = 0;
-			}
+			var z = l+".gif";
+			$("#img").attr("src", z);
+			$("#img").css("display", "block");
+			l++;
+			if(l>4)l=1;
 		}
 
 		function start() {
-			setInterval(img, 2000);
+			setInterval(img, 1000);
 		}
 
+
+		
 		var b = 0;
 		function slide(){
 			if (b==0) {
@@ -48,7 +49,7 @@
 		}
 
 		function play() {
-			setInterval(slide, 2000);
+			setInterval(slide, 1000);
 		}
 	</script>
 </body>
